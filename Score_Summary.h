@@ -2,14 +2,12 @@
 #define SCORE_SUMMARY_H
 #include "Game.h"
 
-class Score_Summary
+class Score_Summary: public IObserver
 {
   private:
     // A pointer to the game data that provides the score information including
     // the player, team, and timing of scores
     Game* data;
-
-    
 
   public:
     /*
@@ -24,6 +22,11 @@ class Score_Summary
      * for each goal scored in the game provided.
      */
     void display();
+
+    /*
+     * Calls display() to display the scoring summary
+     */
+    void update(){ display(); }
 };
 
 #endif

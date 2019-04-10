@@ -1,6 +1,7 @@
 #ifndef GAME_H
 #define GAME_H
 #include "Player.h"
+#include "ObserverPattern.h"
 #include <string>
 #include <vector>
 
@@ -9,12 +10,12 @@ const Player DEFAULT_PLAYER = Player("NA",999);
 
 struct goal_t
 {
-      Player scorer = DEFAULT_PLAYER;
-      int team; // 1-indexed
-      int period; // 1-indexed
+  Player scorer = DEFAULT_PLAYER;
+  int team; // 1-indexed
+  int period; // 1-indexed
 };
 
-class Game
+class Game: public Observable
 {
   private:
     int current_period;

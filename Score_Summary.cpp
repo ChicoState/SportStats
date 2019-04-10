@@ -16,7 +16,6 @@ Score_Summary::Score_Summary(Game* game){
 void Score_Summary::display(){
   int period = -1;
   std::vector <goal_t> all_goals = data->get_goals();
-  
   for(int event = 0; event < all_goals.size(); event++){
     goal_t current = all_goals[event];
     if( current.period != period ){

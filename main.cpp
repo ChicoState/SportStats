@@ -4,6 +4,8 @@
 #include "Player.h"
 #include "Score_Summary.h"
 #include "Scoreboard.h"
+#include "ObserverPattern.h"
+#include <cstdlib>
 
 using std::string;
 using std::cout;
@@ -26,16 +28,18 @@ int main()
   cin>>file1>>file2;
 
   try{
-    game_data = new Game(file1,file2);  
+    game_data = new Game(file1,file2);
   }
   catch(...){
     cout<<"Something went wrong (besides this message).\n";
-    exit(1);
+    std::exit(1);
   }
 
   //connect different displays with game data
   board = new Scoreboard(game_data);
   summary = new Score_Summary(game_data);
+  game_data->addObserver(board);
+  game_data->addObserver(summary);
 
   char choice = QUIT_CHOICE;
   do{
@@ -45,7 +49,7 @@ int main()
       string player;
       cout<<"Scoring Player: ";
       cin>>player;
-      game_data->add_goal(player);  
+      game_data->add_goal(player);
     }
     else if( choice == PERIOD_CHOICE ){
       game_data->next_period();
