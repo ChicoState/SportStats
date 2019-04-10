@@ -2,6 +2,8 @@
 #define SCORE_SUMMARY_H
 #include "Game.h"
 
+#include "ObserverPattern.h"
+
 class Score_Summary: public IObserver
 {
   private:

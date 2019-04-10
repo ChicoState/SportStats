@@ -2,6 +2,7 @@
 #define SCOREBOARD_H
 #include "Game.h"
 
+#include "ObserverPattern.h"
 class Scoreboard: public IObserver
 {
   private:
