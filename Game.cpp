@@ -55,9 +55,11 @@ void Game::add_goal(std::string player_name){
         new_goal.period = current_period;
         new_goal.team = team+1;
         goals.push_back(new_goal);
+        // notifyObservers(); //every time a new_goal is added, the observers are notified
       }
     }
   }
+  notifyObservers(); //every time a new_goal is added, the observers are notified
 }
 
 // Progresses the current period to the subsequent period #, with no limit

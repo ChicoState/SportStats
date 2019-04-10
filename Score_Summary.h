@@ -2,18 +2,18 @@
 #define SCORE_SUMMARY_H
 #include "Game.h"
 
-class Score_Summary
+class Score_Summary: public IObserver
 {
   private:
     // A pointer to the game data that provides the score information including
     // the player, team, and timing of scores
     Game* data;
 
-    
+
 
   public:
     /*
-     * Overloaded constructor initiates a score summary to correspond with a 
+     * Overloaded constructor initiates a score summary to correspond with a
      * particular game so it can update whenever a new goal has been scored
      */
     Score_Summary(Game*);
@@ -24,6 +24,9 @@ class Score_Summary
      * for each goal scored in the game provided.
      */
     void display();
+
+    /* necessary for updating views */
+    void update() { display(); }
 };
 
 #endif
