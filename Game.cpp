@@ -55,6 +55,7 @@ void Game::add_goal(std::string player_name){
         new_goal.period = current_period;
         new_goal.team = team+1;
         goals.push_back(new_goal);
+        notifyObservers();
       }
     }
   }
@@ -64,6 +65,7 @@ void Game::add_goal(std::string player_name){
 // for the number of periods
 void Game::next_period(){
   current_period++;
+  notifyObservers();
 }
 
 // Retrieves the list of goal data in chronological order

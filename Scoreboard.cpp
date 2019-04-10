@@ -33,3 +33,7 @@ void Scoreboard::display(){
 Scoreboard::Scoreboard(Game* scores){
   data = scores;
 }
+
+void Scoreboard::update(){
+  display();
+}
