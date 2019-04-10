@@ -45,6 +45,7 @@ Player Game::get_player_by_name(std::string find){
 
 // Records a player's goal in the current period for the team containing
 // the player name provided (or does nothing if no matching names)
+// Notifies IObservers that game data has been updated
 void Game::add_goal(std::string player_name){
   for(int team=0; team < TEAMS; team++){
     for(int i=0; i<roster[team].size(); i++){
@@ -58,12 +59,15 @@ void Game::add_goal(std::string player_name){
       }
     }
   }
+  notifyObservers();
 }
 
 // Progresses the current period to the subsequent period #, with no limit
 // for the number of periods
+// Notifies IObservers that game data has been updated
 void Game::next_period(){
   current_period++;
+  notifyObservers();
 }
 
 // Retrieves the list of goal data in chronological order

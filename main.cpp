@@ -4,6 +4,7 @@
 #include "Player.h"
 #include "Score_Summary.h"
 #include "Scoreboard.h"
+#include "ObserverPattern.h"
 
 using std::string;
 using std::cout;
@@ -20,7 +21,8 @@ int main()
   Game *game_data = NULL;
   Scoreboard *board = NULL;
   Score_Summary *summary = NULL;
-  string file1 ="", file2="";
+ 
+    string file1 ="", file2="";
 
   cout<<"Enter two roster files: ";
   cin>>file1>>file2;
@@ -36,6 +38,10 @@ int main()
   //connect different displays with game data
   board = new Scoreboard(game_data);
   summary = new Score_Summary(game_data);
+
+  //register concrete observers with subject, Game Oberver
+  game_data->addObserver(board);
+  game_data->addObserver(summary);
 
   char choice = QUIT_CHOICE;
   do{

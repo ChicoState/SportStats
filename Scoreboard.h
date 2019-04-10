@@ -1,8 +1,9 @@
 #ifndef SCOREBOARD_H
 #define SCOREBOARD_H
 #include "Game.h"
+#include "ObserverPattern.h"
 
-class Scoreboard
+class Scoreboard : public IObserver
 {
   private:
     // A pointer to the game data that provides the score information including
@@ -17,6 +18,7 @@ class Scoreboard
      * updated whenever there is a new score
      */
     Scoreboard(Game*);
+    void update();
 
     /*
      * Displays the team scores game in the format:

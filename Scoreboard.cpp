@@ -33,3 +33,11 @@ void Scoreboard::display(){
 Scoreboard::Scoreboard(Game* scores){
   data = scores;
 }
+
+/*
+ * Dispays the Score Summary every time the game data is updated.
+ * Called when Game data has been changed.
+ */
+void Scoreboard::update(){
+  display();
+}

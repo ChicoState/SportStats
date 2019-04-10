@@ -26,3 +26,11 @@ void Score_Summary::display(){
     std::cout<<current.scorer.get_name()<<", Team "<<current.team<<" scored!\n";
   }
 }
+
+/*
+ * Dispays the Score Summary every time the game data is updated.
+ * Called when Game data has been changed.
+ */
+void Score_Summary::update(){ 
+  display();
+}
