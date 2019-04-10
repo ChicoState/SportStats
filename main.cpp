@@ -4,6 +4,7 @@
 #include "Player.h"
 #include "Score_Summary.h"
 #include "Scoreboard.h"
+#include "ObserverPattern.h"
 
 using std::string;
 using std::cout;
@@ -36,6 +37,8 @@ int main()
   //connect different displays with game data
   board = new Scoreboard(game_data);
   summary = new Score_Summary(game_data);
+  game_data->addObserver(board);
+  game_data->addObserver(summary);
 
   char choice = QUIT_CHOICE;
   do{
