@@ -55,6 +55,8 @@ void Game::add_goal(std::string player_name){
         new_goal.period = current_period;
         new_goal.team = team+1;
         goals.push_back(new_goal);
+
+        notifyObservers();
       }
     }
   }
