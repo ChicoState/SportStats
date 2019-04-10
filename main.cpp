@@ -5,6 +5,8 @@
 #include "Score_Summary.h"
 #include "Scoreboard.h"
 #include "ObserverPattern.h"
+#include <cstdlib>
+
 
 using std::string;
 using std::cout;
@@ -31,7 +33,7 @@ int main()
   }
   catch(...){
     cout<<"Something went wrong (besides this message).\n";
-    exit(1);
+    std::exit(1);
   }
 
   //connect different displays with game data
