@@ -22,6 +22,7 @@ int main()
   Score_Summary *summary = NULL;
   string file1 ="", file2="";
 
+
   cout<<"Enter two roster files: ";
   cin>>file1>>file2;
 
@@ -36,6 +37,9 @@ int main()
   //connect different displays with game data
   board = new Scoreboard(game_data);
   summary = new Score_Summary(game_data);
+
+  game_data->addObserver(board);
+  game_data->addObserver(summary);
 
   char choice = QUIT_CHOICE;
   do{

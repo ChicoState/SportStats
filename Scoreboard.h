@@ -2,7 +2,7 @@
 #define SCOREBOARD_H
 #include "Game.h"
 
-class Scoreboard
+class Scoreboard: public IObserver
 {
   private:
     // A pointer to the game data that provides the score information including
@@ -18,6 +18,10 @@ class Scoreboard
      */
     Scoreboard(Game*);
 
+    void update()
+    {
+        display();
+    }
     /*
      * Displays the team scores game in the format:
      *  Team A: 1
@@ -25,6 +29,7 @@ class Scoreboard
      * for the current total scores in the game provided.
      */
     void display();
+
 };
 
 #endif
