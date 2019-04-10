@@ -58,6 +58,7 @@ void Game::add_goal(std::string player_name){
       }
     }
   }
+	notifyObservers();
 }
 
 // Progresses the current period to the subsequent period #, with no limit

@@ -3,6 +3,8 @@
 #include "Player.h"
 #include <string>
 #include <vector>
+#include "ObserverPattern.h"
+
 
 const int TEAMS = 2;
 const Player DEFAULT_PLAYER = Player("NA",999);
@@ -14,7 +16,7 @@ struct goal_t
       int period; // 1-indexed
 };
 
-class Game
+class Game: public Observable
 {
   private:
     int current_period;
