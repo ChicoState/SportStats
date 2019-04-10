@@ -24,7 +24,9 @@ void Scoreboard::display(){
   }
   std::cout<<"Team 1: "<<total_1<<"\nTeam 2: "<<total_2<<std::endl;
 }
-
+void Scoreboard::update(){
+  display();
+}
 /*
  * Overloaded constructor initiates a scoreboard that reflects the
  * total score by team of the provided game pointer, so that it can also be

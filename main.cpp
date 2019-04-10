@@ -36,6 +36,9 @@ int main()
   //connect different displays with game data
   board = new Scoreboard(game_data);
   summary = new Score_Summary(game_data);
+  
+  game_data->addObserver(board);
+  game_data->addObserver(summary);
 
   char choice = QUIT_CHOICE;
   do{
@@ -45,7 +48,7 @@ int main()
       string player;
       cout<<"Scoring Player: ";
       cin>>player;
-      game_data->add_goal(player);  
+      game_data->add_goal(player);
     }
     else if( choice == PERIOD_CHOICE ){
       game_data->next_period();

@@ -26,3 +26,6 @@ void Score_Summary::display(){
     std::cout<<current.scorer.get_name()<<", Team "<<current.team<<" scored!\n";
   }
 }
+void Score_Summary::update(){
+  display();
+}
