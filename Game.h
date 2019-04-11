@@ -1,6 +1,7 @@
 #ifndef GAME_H
 #define GAME_H
 #include "Player.h"
+#include "ObserverPattern.h"
 #include <string>
 #include <vector>
 
@@ -28,6 +29,7 @@ class Game
     // Initiates rosters from the file names provided for team 1 and team 2 and
     // begins the game in period 1
     Game(std::string, std::string);
+    
 
     // Records a player's goal in the current period for the team containing
     // the player name provided (or does nothing if no matching names)
@@ -39,6 +41,7 @@ class Game
 
     // Retrieves the list of goal data in chronological order
     std::vector <goal_t> get_goals();
+
 };
 
 #endif

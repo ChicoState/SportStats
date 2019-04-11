@@ -1,5 +1,6 @@
 #include "Score_Summary.h"
 #include "Game.h"
+#include "ObserverPattern.h"
 #include <iostream>
 #include <vector>
 
@@ -24,5 +25,10 @@ void Score_Summary::display(){
       std::cout<<"Period "<<period+1<<":\n";
     }
     std::cout<<current.scorer.get_name()<<", Team "<<current.team<<" scored!\n";
+  }
+
+  void Score_Summary::update() {
+    display();
+    notifyObservers();
   }
 }

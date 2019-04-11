@@ -1,6 +1,7 @@
 #ifndef SCORE_SUMMARY_H
 #define SCORE_SUMMARY_H
 #include "Game.h"
+#include "ObserverPattern.h"
 
 class Score_Summary
 {
@@ -23,6 +24,7 @@ class Score_Summary
      *  Period X: Player Y, Team A 1 - Team B 0
      * for each goal scored in the game provided.
      */
+    void update();
     void display();
 };
 

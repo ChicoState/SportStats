@@ -28,3 +28,5 @@ Scoreboard.o:
 
 Score_Summary.o:
 	@${CXX} ${CPPFLAGS} ${CXXFLAGS} -c Score_Summary.cpp
+
+clean: rm *.o

@@ -24,6 +24,7 @@ class Scoreboard
      *  Team B: 0
      * for the current total scores in the game provided.
      */
+    void update();
     void display();
 };
 
