@@ -1,30 +1,34 @@
 #ifndef SCOREBOARD_H
 #define SCOREBOARD_H
 #include "Game.h"
+#include "ObserverPattern.h"
 
-class Scoreboard
+class Scoreboard : public IObserver
 {
-  private:
-    // A pointer to the game data that provides the score information including
-    // the player, team, and timing of scores
-    Game* data;
+private:
+  // A pointer to the game data that provides the score information including
+  // the player, team, and timing of scores
+  Game *data;
 
-
-  public:
-    /*
+public:
+  /*
      * Overloaded constructor initiates a scoreboard that reflects the
      * total score by team of the provided game pointer, so that it can also be
      * updated whenever there is a new score
      */
-    Scoreboard(Game*);
+  Scoreboard(Game *);
 
-    /*
+  /*
      * Displays the team scores game in the format:
      *  Team A: 1
      *  Team B: 0
      * for the current total scores in the game provided.
      */
-    void display();
+  void display();
+  void update()
+  {
+    display();
+  };
 };
 
 #endif
