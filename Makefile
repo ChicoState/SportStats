@@ -20,7 +20,7 @@ main.o: Game.o Player.o Scoreboard.o Score_Summary.o
 Game.o: Player.o
 	@${CXX} ${CPPFLAGS} ${CXXFLAGS} -c Game.cpp
 
-Player.o: 
+Player.o:
 	@${CXX} ${CPPFLAGS} ${CXXFLAGS} -c Player.cpp
 
 Scoreboard.o:

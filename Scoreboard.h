@@ -1,14 +1,13 @@
 #ifndef SCOREBOARD_H
 #define SCOREBOARD_H
 #include "Game.h"
+#include "ObserverPattern.h"
 
-class Scoreboard
-{
+class Scoreboard: public IObserver {
   private:
     // A pointer to the game data that provides the score information including
     // the player, team, and timing of scores
     Game* data;
-
 
   public:
     /*
@@ -25,6 +24,8 @@ class Scoreboard
      * for the current total scores in the game provided.
      */
     void display();
+
+    void update();
 };
 
 #endif

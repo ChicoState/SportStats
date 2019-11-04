@@ -3,20 +3,20 @@
 #include <iostream>
 #include <vector>
 
-Score_Summary::Score_Summary(Game* game){
+Score_Summary::Score_Summary(Game* game) {
   data = game;
 }
 
 /*
  * Displays the scoring summary of a game in the format:
- *  Period 1: 
+ *  Period 1:
  *  Player Y, Team 2 scored!
  * for each goal scored in the game provided.
  */
-void Score_Summary::display(){
+void Score_Summary::display() {
   int period = -1;
   std::vector <goal_t> all_goals = data->get_goals();
-  
+
   for(int event = 0; event < all_goals.size(); event++){
     goal_t current = all_goals[event];
     if( current.period != period ){
@@ -25,4 +25,10 @@ void Score_Summary::display(){
     }
     std::cout<<current.scorer.get_name()<<", Team "<<current.team<<" scored!\n";
   }
+}
+
+void Score_Summary::update() {
+  goal_t last_goal = data->get_goals().at(data->get_goals().size() - 1);
+  std::cout << last_goal.scorer.get_name() << ", Team "
+            << last_goal.team << " scored!\n\n";
 }

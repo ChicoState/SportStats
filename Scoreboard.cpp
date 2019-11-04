@@ -9,7 +9,7 @@
  *  Team 2: 0
  * for the current total scores in the game provided.
  */
-void Scoreboard::display(){
+void Scoreboard::display() {
   int total_1 = 0;
   int total_2 = 0;
   std::vector <goal_t> all_goals = data->get_goals();
@@ -30,6 +30,11 @@ void Scoreboard::display(){
  * total score by team of the provided game pointer, so that it can also be
  * updated whenever there is a new score
  */
-Scoreboard::Scoreboard(Game* scores){
+Scoreboard::Scoreboard(Game* scores) {
   data = scores;
+}
+
+void Scoreboard::update() {
+  display();
+  std::cout<<'\n';
 }
