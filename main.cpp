@@ -5,6 +5,7 @@
 #include "Score_Summary.h"
 #include "Scoreboard.h"
 #include <cstdlib>
+#include "ObserverPattern.h"
 
 using std::string;
 using std::cout;

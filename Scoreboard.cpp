@@ -13,7 +13,7 @@ void Scoreboard::display(){
   int total_1 = 0;
   int total_2 = 0;
   std::vector <goal_t> all_goals = data->get_goals();
-
+  
   for(int goal=0; goal < all_goals.size(); goal++){
     if( all_goals[goal].team == 1 ){
       total_1++;
@@ -32,4 +32,8 @@ void Scoreboard::display(){
  */
 Scoreboard::Scoreboard(Game* scores){
   data = scores;
+}
+
+void Scoreboard::update(){
+  display();
 }
