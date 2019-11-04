@@ -59,12 +59,14 @@ void Game::add_goal(std::string player_name){
       }
     }
   }
+  notifyObservers();
 }
 
 // Progresses the current period to the subsequent period #, with no limit
 // for the number of periods
 void Game::next_period(){
   current_period++;
+  notifyObservers();
 }
 
 // Retrieves the list of goal data in chronological order

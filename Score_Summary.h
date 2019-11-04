@@ -1,8 +1,9 @@
 #ifndef SCORE_SUMMARY_H
 #define SCORE_SUMMARY_H
+#include "ObserverPattern.h"
 #include "Game.h"
 
-class Score_Summary
+class Score_Summary: public IObserver
 {
   private:
     // A pointer to the game data that provides the score information including
@@ -24,6 +25,9 @@ class Score_Summary
      * for each goal scored in the game provided.
      */
     void display();
+
+
+	void update();
 };
 
 #endif
