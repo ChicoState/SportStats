@@ -1,5 +1,6 @@
 #include "Game.h"
 #include "Player.h"
+#include "ObserverPattern.h"
 #include <string>
 #include <vector>
 #include <fstream>
@@ -59,6 +60,7 @@ void Game::add_goal(std::string player_name){
       }
     }
   }
+  notifyObservers();
 }
 
 // Progresses the current period to the subsequent period #, with no limit

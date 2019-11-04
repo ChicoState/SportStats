@@ -1,5 +1,6 @@
 #include "Scoreboard.h"
 #include "Game.h"
+#include "ObserverPattern.h"
 #include <vector>
 #include <iostream>
 

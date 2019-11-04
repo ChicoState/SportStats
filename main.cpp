@@ -4,6 +4,7 @@
 #include "Player.h"
 #include "Score_Summary.h"
 #include "Scoreboard.h"
+#include "ObserverPattern.h"
 #include <cstdlib>
 
 using std::string;

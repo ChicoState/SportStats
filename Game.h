@@ -5,6 +5,7 @@
 #ifndef GAME_H
 #define GAME_H
 #include "Player.h"
+#include "ObserverPattern.h"
 #include <string>
 #include <vector>
 
@@ -18,7 +19,7 @@ struct goal_t
       int period; // 1-indexed
 };
 
-class Game
+class Game: public Observable 
 {
   private:
     int current_period;
