@@ -37,6 +37,8 @@ int main()
   //connect different displays with game data
   board = new Scoreboard(game_data);
   summary = new Score_Summary(game_data);
+  game_data->addObserver((IObserver*)board);
+  game_data->addObserver((IObserver*)summary);
 
   char choice = QUIT_CHOICE;
   do{
