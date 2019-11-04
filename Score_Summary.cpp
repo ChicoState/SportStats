@@ -5,7 +5,9 @@
 
 Score_Summary::Score_Summary(Game* game){
   data = game;
+  data->addObserver(this);
 }
+
 
 /*
  * Displays the scoring summary of a game in the format:
@@ -25,4 +27,9 @@ void Score_Summary::display(){
     }
     std::cout<<current.scorer.get_name()<<", Team "<<current.team<<" scored!\n";
   }
+}
+
+
+void Score_Summary::update(){
+    display();
 }

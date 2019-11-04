@@ -32,4 +32,9 @@ void Scoreboard::display(){
  */
 Scoreboard::Scoreboard(Game* scores){
   data = scores;
+  data->addObserver(this);
+}
+
+void Scoreboard::update(){
+    display();
 }
