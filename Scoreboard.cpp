@@ -1,5 +1,6 @@
 #include "Scoreboard.h"
 #include "Game.h"
+#include "ObserverPattern.h"
 #include <vector>
 #include <iostream>
 
@@ -23,6 +24,10 @@ void Scoreboard::display(){
     }
   }
   std::cout<<"Team 1: "<<total_1<<"\nTeam 2: "<<total_2<<std::endl;
+}
+
+void Scoreboard::update() {
+  display();
 }
 
 /*
