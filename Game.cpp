@@ -1,5 +1,6 @@
 #include "Game.h"
 #include "Player.h"
+#include <iostream>
 #include <string>
 #include <vector>
 #include <fstream>
@@ -29,19 +30,27 @@ Game::Game(std::string team1, std::string team2){
   roster[1] = get_roster_from_file(team2);
   current_period = 0;
   if( roster[0].empty() || roster[1].empty()  )
-    throw "Team files NOT successfully loaded.\n";
+    std::cout<<"Team files NOT successfully loaded.\n";
 }
 
 
 // Matches the player by a string match of their name (non-greedy)
 Player Game::get_player_by_name(std::string find){
+  Player thisPlayer = DEFAULT_PLAYER;
+  bool found = false;
   for(int team=0; team < TEAMS; team++){
+    if( found )
+        break;
     for(int i=0; i<roster[team].size(); i++){
       if( find == roster[team][i].get_name() )
-        return roster[team][i];
+      {
+        thisPlayer = roster[team][i];
+        found = true;
+        break;
+      }
     }
   }
-  return DEFAULT_PLAYER;
+  return thisPlayer;
 }
 
 // Records a player's goal in the current period for the team containing
